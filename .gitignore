@@ -1,0 +1,21 @@
+# Security - Never commit these files
+*.env
+*.env.local
+*.env.production
+config/secrets.json
+private/
+.env*
+
+# System files
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE files
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# Dependencies (we'll add these later if needed)
+node_modules/
