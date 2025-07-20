@@ -6,6 +6,9 @@ let currentInput = '';
 let operator = '';
 let previousInput = '';
 
+// Memory feature
+let memory = 0;
+
 function appendToDisplay(value) {
     // Security: Validate input to prevent XSS
     if (typeof value !== 'string') return;
@@ -68,6 +71,22 @@ function safeEvaluate(expression) {
     } catch (e) {
         return null;
     }
+}
+
+// Memory functions
+function memoryAdd() {
+    const currentValue = parseFloat(display.value) || 0;
+    memory += currentValue;
+    alert(`Memory updated: ${memory}`);
+}
+
+function memoryRecall() {
+    display.value = memory;
+}
+
+function memoryClear() {
+    memory = 0;
+    alert('Memory cleared');
 }
 
 // Add keyboard support
